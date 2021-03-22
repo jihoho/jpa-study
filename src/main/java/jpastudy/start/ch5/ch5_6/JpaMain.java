@@ -1,5 +1,8 @@
 package jpastudy.start.chap05;
 
+import jpastudy.start.ch5.ch5_6.Member;
+import jpastudy.start.ch5.ch5_6.Team;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -26,11 +29,8 @@ public class JpaMain {
 
             tx.begin(); //트랜잭션 시작
 //            testSave(em);
-            testSaveNonOwner(em);
-//            objectQuery(em);
-//            queryLogicJoin(em);
-//            updateRelation(em);
-            biDirection(em);
+//            testSaveNonOwner(em);
+            testORM_양방향(em);
             tx.commit();//트랜잭션 커밋
 
         } catch (Exception e) {
@@ -73,17 +73,26 @@ public class JpaMain {
 
         em.persist(team2);
 
+    }
 
+    public static void testORM_양방향(EntityManager em){
+        //        팀1 저장
+        Team team1=new Team("team1","팀1");
+        em.persist(team1);
 
+        //        회원1 저장
+        Member member1=new Member("member1","회원1");
+//        양방향 연관관계 설정
+        member1.setTeam(team1);
+        team1.getMembers().add(member1);
+        em.persist(member1);    // 연관 관계 설정 member1 -> team1
+
+        //        회원2 저장
+        Member member2=new Member("member2","회원2");
+        member2.setTeam(team1);  // 연관 관계 설정 member2 -> team1
+        team1.getMembers().add(member2);
+        em.persist(member2);
 
     }
 
-    public static void biDirection(EntityManager em){
-        Team team=em.find(Team.class,"team1");
-        List<Member> members=team.getMembers();
-        System.out.println(members);
-        for (Member member:members){
-            System.out.println("member.username= "+member.getUsername());
-        }
-    }
 }

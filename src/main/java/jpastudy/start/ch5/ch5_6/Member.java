@@ -1,4 +1,4 @@
-package jpastudy.start.chap05;
+package jpastudy.start.ch5.ch5_6;
 
 import lombok.Data;
 

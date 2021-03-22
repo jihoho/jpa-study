@@ -1,6 +1,7 @@
-package jpastudy.start.chap05;
+package jpastudy.start.ch5.ch5_6;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,8 @@ import java.util.List;
  */
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Team {
 
     @Id

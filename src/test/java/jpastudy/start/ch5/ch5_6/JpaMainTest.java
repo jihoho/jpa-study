@@ -1,5 +1,7 @@
-package jpastudy.start.chap05;
+package jpastudy.start.ch5.ch5_6;
 
+import jpastudy.start.ch5.ch5_6.Member;
+import jpastudy.start.ch5.ch5_6.Team;
 import org.junit.Test;
 
 import java.util.List;
