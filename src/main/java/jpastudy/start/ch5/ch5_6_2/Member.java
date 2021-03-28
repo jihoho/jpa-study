@@ -11,7 +11,7 @@ import javax.persistence.*;
  * Date: 2021-02-25 Time: 오후 6:13
  */
 @Getter
-@Entity
+//@Entity
 public class Member {
 
     @Id

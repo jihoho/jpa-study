@@ -1,9 +1,12 @@
-package jpastudy.start.ch5.model2;
+package jpastudy.start.ch6.model3;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 

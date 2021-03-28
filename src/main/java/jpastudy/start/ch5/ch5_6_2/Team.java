@@ -16,7 +16,7 @@ import java.util.List;
  * Date: 2021-02-25 Time: 오후 7:19
  */
 
-@Entity
+//@Entity
 @Getter
 @Setter
 public class Team {

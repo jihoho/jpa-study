@@ -1,12 +1,14 @@
-package jpastudy.start.ch5.model2;
+package jpastudy.start.ch6.model3;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA
@@ -26,5 +28,8 @@ public class Item {
     private String name; // 이름
     private  int price; // 가격
     private int stockQuantity; // 재고수량
+
+    @ManyToMany(mappedBy = "items")
+    private List<Category> categories= new ArrayList<Category>();
 
 }

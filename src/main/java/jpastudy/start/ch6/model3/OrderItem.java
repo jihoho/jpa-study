@@ -1,4 +1,4 @@
-package jpastudy.start.ch5.model2;
+package jpastudy.start.ch6.model3;
 
 import lombok.Getter;
 import lombok.Setter;
